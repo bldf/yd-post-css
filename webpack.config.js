@@ -2,29 +2,29 @@ const HtmlWebpackPlugin = require('html-webpack-plugin') ; // 配置加载html�
 const CleanWebpackPlugin = require('clean-webpack-plugin') ; // 自动删除打包目录
 const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // 提取css到一个文件中去
 module.exports = {
-    module: {
-        rules: [
-            {
-                test: /\.css$/,
-                use: [{
-                    loader: MiniCssExtractPlugin.loader,
-                    // options: {
-                    //     // you can specify a publicPath here
-                    //     // by default it use publicPath in webpackOptions.output
-                    //     publicPath: '../'
-                    // }
-                }, {
-                    loader: 'css-loader',// 让我们可以使用import导入css文件
-                    options: {
-                        importLoaders: 1
-                        // modules: true,
-                        // localIdentName: '[path][name]__[local]--[hash:base64:5]'
-                        // localIdentName: '[local]'
-                    }
-                },'postcss-loader'
-                ]
-            }
-        ]},
+        module: {
+            rules: [
+                {
+                    test: /\.css$/,
+                    use: [{
+                        loader: MiniCssExtractPlugin.loader,
+                        // options: {
+                        //     // you can specify a publicPath here
+                        //     // by default it use publicPath in webpackOptions.output
+                        //     publicPath: '../'
+                        // }
+                    }, {
+                        loader: 'css-loader',// 让我们可以使用import导入css文件
+                        options: {
+                            importLoaders: 1
+                            // modules: true,
+                            // localIdentName: '[path][name]__[local]--[hash:base64:5]'
+                            // localIdentName: '[local]'
+                        }
+                    },'postcss-loader'
+                    ]
+                }
+            ]},
     plugins: [
         new HtmlWebpackPlugin({
             filename: 'index.html',
