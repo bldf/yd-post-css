@@ -16,10 +16,12 @@ module.exports = {
                 }, {
                     loader: 'css-loader',// 让我们可以使用import导入css文件
                     options: {
-                        modules: true,
-                        localIdentName: '[path][name]__[local]--[hash:base64:5]'
+                        importLoaders: 1
+                        // modules: true,
+                        // localIdentName: '[path][name]__[local]--[hash:base64:5]'
+                        // localIdentName: '[local]'
                     }
-                }
+                },'postcss-loader'
                 ]
             }
         ]},
@@ -32,8 +34,8 @@ module.exports = {
         new MiniCssExtractPlugin({
             //  你可以在这里指定一个publicPath
               //  默认情况下，它在webpackOptions.output中使用publicPath
-            filename: "[name].css",
-            chunkFilename: "[id].css"
+              filename: "styles/[name].css",
+              chunkFilename: "styles/[id].css"//chunk 就是插入的顺序
           })
 
       ]

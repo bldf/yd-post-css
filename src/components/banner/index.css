@@ -1,4 +1,78 @@
-.user-title{
-    background:#6cf ;
-    color :#fff ;
+:root {
+  --fontSize: 1rem;
+  --mainColor: #12345678;
+  --secondaryColor: lab(32.5 38.5 -47.6 / 90%);
+   --mainColor: rgba(18, 52, 86, 0.47059);
+}
+.c-main{
+  & .user-title{
+    background: var(--mainColor);
+  }
+  & .abc-name{
+    font-fontSize : var (--fontSize)
+  }
+}
+
+
+@custom-media --viewport-medium (width <= 50rem);
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
+ 
+:root {
+  --mainColor: #12345678;
+}
+ 
+body {
+  color: var(--mainColor);
+  font-family: system-ui;
+  overflow-wrap: break-word;
+}
+ 
+:--heading {
+ 
+  @media (--viewport-medium) {
+    margin-block: 0;
+  }
+}
+ 
+a {
+  color: rgb(0 0 100% / 90%);
+ 
+  &:hover {
+    color: rebeccapurple;
+  }
+}
+ 
+/* becomes */
+ 
+
+body {
+  color: rgba(18, 52, 86, 0.47059);
+  color: var(--mainColor);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+  word-wrap: break-word;
+}
+ 
+h1, h2, h3, h4, h5, h6 {
+  
+}
+ 
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  h1, h2, h3, h4, h5, h6 {
+  
+  }
+}
+ 
+@media (max-width: 50rem) {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+ 
+a {
+  color: rgba(0, 0, 255, 0.9)
+}
+ 
+a:hover {
+  color: #639;
 }
